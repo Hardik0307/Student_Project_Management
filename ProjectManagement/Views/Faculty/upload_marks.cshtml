@@ -1,0 +1,49 @@
+﻿@model ProjectManagement.Models.ActiveProject
+
+@{
+    ViewBag.Title = "upload_marks";
+}
+
+<h2>Upload Marks</h2>
+
+
+@using (Html.BeginForm("upload_marks", "Faculty"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.Label(Model.member1_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Model.member1_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("mem1_marks", null, new { @class = "form-control", placeholder = "Enter Marks" })
+        </div>
+        <div class="form-group">
+            @Html.Label(Model.member2_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Model.member2_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("mem2_marks", null, new { @class = "form-control", placeholder = "Enter Marks" })
+        </div>
+        <div class="form-group">
+            @Html.Label(Model.member3_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label(Model.member3_name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextBox("mem3_marks", null, new { @class = "form-control", placeholder = "Enter Marks" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Remarks", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.TextArea("remarks", null, new { @class = "form-control" })
+        </div>
+        <br /><br />
+        <div class="form-group text-left">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

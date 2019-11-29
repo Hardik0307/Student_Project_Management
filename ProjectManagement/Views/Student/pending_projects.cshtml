@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ProjectManagement.Models.CreateProject>
+
+@{
+    ViewBag.Title = "pending_projects";
+}
+<a href="/Student/Index" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2 class="panel ">Pending Projects</h2>
+
+     
+
+@foreach (var item in Model) {
+ 
+    <div class="jumbotron">
+        <ul>
+            <li class="alert alert-success">Project Definition :: @Html.DisplayFor(modelItem => item.Pdef)</li>
+            <li class="al">Project Description : @Html.DisplayFor(modelItem => item.Pdesp)</li>
+            <li>Subject : @Html.DisplayFor(modelItem => item.Psub)</li>
+            <li>Total Marks for this project is @Html.DisplayFor(modelItem => item.totalMarks) .</li>
+            <li class="label label-warning" >Project Selection Deadline Before @Html.DisplayFor(modelItem => item.SelectionDeadline)</li>
+            <li class="label label-warning">Project Submission Deadline Before @Html.DisplayFor(modelItem => item.SubmissionDeadline)</li>
+
+        </ul>
+        <span class="label label-info">NOTE : Team should consist of <b>3</b> members only.</span>
+        <div class="text-right">
+            <a type="button" class="btn btn-primary btn-lg" href="select_project/@item.Pid">Select Project &raquo;</a>
+        </div>
+    </div>
+            
+      
+       
+}
+

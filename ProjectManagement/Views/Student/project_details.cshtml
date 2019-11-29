@@ -1,0 +1,66 @@
+﻿@model ProjectManagement.Models.CreateProject
+
+@{
+    ViewBag.Title = "project_details";
+}
+<a href="/Student/selected_project" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2 class="panel">Project Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pdef)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pdef)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDeadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDeadline)
+        </dd>
+
+     
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Psem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Psem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pdesp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pdesp)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Psub)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Psub)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalMarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalMarks)
+        </dd>
+
+    </dl>
+</div>

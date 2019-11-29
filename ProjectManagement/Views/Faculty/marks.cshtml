@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ProjectManagement.Models.ProjectEvaluation>
+
+@{
+    ViewBag.Title = "marks";
+}
+<a href="/Faculty/Created_project_list" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2 class="panel">Given Marks</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("StudentId")
+        </th>
+        <th>
+            @Html.Label("Marks")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mem1_marks)
+        </td>
+        </tr>
+        <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_id)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.mem2_marks)
+        </td>
+            </tr>
+            <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mem3_marks)
+        </td>
+
+    </tr>
+}
+
+</table>

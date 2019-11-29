@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ProjectManagement.Models.ProjectEvaluation>
+
+@{
+    ViewBag.Title = "submitted_project";
+    int i = 0;
+
+}
+<a href="/Student/Index" class="btn btn-primary btn-lg">&laquo;</a>
+<h2 class="panel">Submitted Project Status</h2>
+@foreach (var item in Model)
+{
+
+
+
+    <div class="jumbotron">
+        <h3>Project @ViewData["" + i] </h3>
+        <ol>
+            <li>
+                Member ID : @Html.DisplayFor(modelItem => item.member1_id) &nbsp;&nbsp;
+                Obtained Marks : <span class="label label-info"> @Html.DisplayFor(modelItem => item.mem1_marks) out of @Html.DisplayFor(modelItem => item.totmarks)</span>
+            </li>
+            <li>
+                Member ID : @Html.DisplayFor(modelItem => item.member2_id) &nbsp;&nbsp;
+                Obtained Marks : <span class="label label-info">@Html.DisplayFor(modelItem => item.mem2_marks) out of @Html.DisplayFor(modelItem => item.totmarks)</span>
+            </li>
+            <li>
+                Member ID : @Html.DisplayFor(modelItem => item.member3_id) &nbsp;&nbsp;
+                Obtained Marks : <span class="label label-info"> @Html.DisplayFor(modelItem => item.mem3_marks) out of @Html.DisplayFor(modelItem => item.totmarks)</span>
+            </li>
+        </ol>
+        &asymp; Remark for &rArr;<b> @Html.DisplayFor(modelItem => item.Remarks)</b>
+    @{ 
+        i = i + 1;
+    }
+    </div>
+    
+           
+}
+
+
+

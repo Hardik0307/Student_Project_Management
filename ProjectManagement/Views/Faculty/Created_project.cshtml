@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ProjectManagement.Models.CreateProject>
+
+@{
+    ViewBag.Title = "Created_project";
+}
+<a href="/Faculty/Index" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2 class="panel">Created projects</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pdef)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmissionDeadline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectionDeadline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Psem)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Psub)
+        </th>
+
+        <th></th>
+        <th>Select</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pdef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubmissionDeadline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelectionDeadline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Psem)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Psub)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Pid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Pid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Pid })
+        </td>
+        <td>
+            <a href="view_teams/@item.Pid" class="btn btn-success">View Teams</a>
+        </td>
+    </tr>
+}
+
+</table>

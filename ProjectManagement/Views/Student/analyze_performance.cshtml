@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "analyze_performance";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>Line Chart</title>
+</head>
+<body>
+    <div class="container">
+        <a href="/Student/Index" class="btn btn-primary btn-lg">&laquo;</a>
+        <br /><br />
+        <div id="chartContainer"></div>
+
+        <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "light2",
+                zoomEnabled: true,
+                animationEnabled: true,
+                title: {
+                    text: "Performance of @User.Identity.Name per semester"
+                },
+                subtitles: [
+                    {
+                        text: "Semester vs Percentage"
+                    }
+                ],
+                data: [
+                {
+                    type: "line",
+                    dataPoints: [
+                        { x: 1, y: @ViewBag.marks[0],label:'Semester 1' },
+                        { x: 2, y: @ViewBag.marks[1],label:'Semester 2' },
+                        { x: 3, y: @ViewBag.marks[2], label: 'Semester 3' },
+                        { x: 4, y: @ViewBag.marks[3], label: 'Semester 4' },
+                        { x: 5, y: @ViewBag.marks[4], label: 'Semester 5' },
+                        { x: 6, y: @ViewBag.marks[5], label: 'Semester 6' },
+                        { x: 7, y: @ViewBag.marks[6], label: 'Semester 7' },
+                        { x: 8, y: @ViewBag.marks[7], label: 'Semester 8' }
+
+                    ],
+                }
+                ]
+            });
+            chart.render();
+        };
+        </script>
+    </div>
+</body>
+</html>

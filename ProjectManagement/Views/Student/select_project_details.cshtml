@@ -1,0 +1,74 @@
+﻿@model ProjectManagement.Models.ActiveProject
+
+@{
+    ViewBag.Title = "select_project_details";
+}
+
+<h2>select_project_details</h2>
+
+<div>
+    <h4>ActiveProject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrjTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrjTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member1_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member1_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member2_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member2_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.member3_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.member3_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FacultyId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacultyId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SelectionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SelectionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ActId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

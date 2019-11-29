@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ProjectManagement.Models.ActiveProject>
+
+@{
+    ViewBag.Title = "view_teams";
+}
+<a href="/Faculty/Created_project" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2>Views Team</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrjTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member1_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member2_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.member3_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectionDate)
+        </th>
+
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrjTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member1_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member2_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.member3_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelectionDate)
+        </td>
+        <td>
+            <a href="/Faculty/download_project/@item.ActId" class="btn btn-info">Download</a>
+        </td>
+        <td>
+            <a href="/Faculty/upload_marks/@item.ActId" class="btn btn-info">Upload Marks</a>
+        </td>
+    </tr>
+}
+
+</table>

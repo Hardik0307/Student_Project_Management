@@ -1,0 +1,99 @@
+﻿@model ProjectManagement.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="panel">Profile Page</h2>
+
+<div class="container">
+    <p>
+        <a class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Your Details  &dArr;
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.emailId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.emailId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.joinYear)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.joinYear)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.city)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.city)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Dept)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Dept)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+    <p>
+        <a class="btn btn-primary btn-lg" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Manage Projects  &dArr;
+        </a>
+    </p>
+    <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p class="alert alert-info">Create Projects</p>
+                    <span class="text-right">
+                        <a href="/Faculty/Create_project" class="btn btn-info">See</a>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <p class="alert alert-info">Created Project List/Give Marks/Show Teams</p>
+                    <span class="text-right">
+                        <a href="/Faculty/Created_project" class="btn btn-info">See</a>
+                    </span>
+                </li>
+                <li class="list-group-item">
+                    <p class="alert alert-success">Show Created project</p>
+                    <span class="text-right">
+                        <a href="/Faculty/Created_project_list" class="btn btn-info">See</a>
+                    </span>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>

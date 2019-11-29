@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ProjectManagement.Models.CreateProject>
+
+@{
+    ViewBag.Title = "Created_project";
+}
+<a href="/Faculty/Index" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2>Created Project Record</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pdef)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubmissionDeadline)
+        </th>
+        <th>    
+            @Html.DisplayNameFor(model => model.SelectionDeadline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Psem)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Psub)
+        </th>
+
+        <th></th>
+      
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pdef)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubmissionDeadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectionDeadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Psem)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Psub)
+            </td>
+
+            <td>
+                <a href="marks/@item.Pid" class="btn btn-success">Show Marks</a>
+            </td>
+        </tr>
+    }
+
+</table>

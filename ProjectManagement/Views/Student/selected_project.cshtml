@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjectManagement.Models.ActiveProject>
+
+@{
+    ViewBag.Title = "selected_project";
+}
+<a href="/Student/Index" class="btn btn-primary btn-lg">&laquo;</a>
+
+<h2 class="panel">Active Projects</h2>
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="jumbotron">
+        <ul>
+            <li class="active">Project Title &rarr; <b>@Html.DisplayFor(modelItem => item.PrjTitle)</b> </li>
+            
+                <ul>
+                    <li>Member 1 : @Html.DisplayFor(modelItem => item.member1_name)</li>
+                    <li>Member 2 : @Html.DisplayFor(modelItem => item.member2_name)</li>
+                    <li>Member 3 : @Html.DisplayFor(modelItem => item.member3_name)</li>
+                </ul>
+            <li>
+                You have selected project on <i>@Html.DisplayFor(modelItem => item.SelectionDate) .</i>
+            </li>
+            <li>
+                @Html.ActionLink("Know More", "project_details/" + item.Pid, "Student")
+            </li>
+           
+                           
+        </ul>
+        
+        <div>
+            @using (Html.BeginForm("submit_project/" + item.Pid, "Student", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="file" name="file" />
+                <input type="submit" value="Upload" />  
+            }
+        </div>
+        
+       
+        
+    </div>
+}
+
